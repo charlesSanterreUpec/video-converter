@@ -1,0 +1,12 @@
+amazonProperties:
+  endpointUrl: https://s3.us-east-3.amazonaws.com
+  accessKey: XXXXXXXXXXXXXXXXX
+  secretKey: XXXXXXXXXXXXXXXXXXXXXXXXXX
+  bucketName: your-bucket-name
+
+pubsub :
+  project : videoconvertering3
+  topic : tpconverter
+aws :
+  dynamodb :
+    table : video_conversions
