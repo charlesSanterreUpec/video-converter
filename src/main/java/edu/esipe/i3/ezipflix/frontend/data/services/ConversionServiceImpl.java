@@ -87,7 +87,7 @@ public class ConversionServiceImpl implements ConversionService {
         Item item = new Item()
                 .withPrimaryKey("uuid", video.getUuid().toString())
                 .withString("originpath", video.getOriginPath().toString())
-                .withString("targetpath", "");
+                .withString("targetpath", "target");
 
         PutItemOutcome itemOutcome = table.putItem(item);
         return itemOutcome.toString();

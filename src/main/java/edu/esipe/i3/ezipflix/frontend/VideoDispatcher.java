@@ -26,12 +26,12 @@ public class VideoDispatcher{
     // ┌───────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
     // │ REST Resources                                                                                                │
     // └───────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
-    @PostMapping(value = "/convert")
-    public ConversionResponse convert(@RequestBody ConversionRequest request) throws Exception {
+    @GetMapping(value = "/convert")
+    public ConversionResponse convert(/*@RequestBody ConversionRequest request*/) throws Exception {
         VideoConversions videoConversion = new VideoConversions(
                 UUID.randomUUID().toString(),
-                request.getPath().toString(),
-        "");
+                /*request.getPath().toString()*/"origin",
+        "target");
         String dbRetour = this.conversionService.save(videoConversion);
         String messageId = this.conversionService.publish(videoConversion);
 
